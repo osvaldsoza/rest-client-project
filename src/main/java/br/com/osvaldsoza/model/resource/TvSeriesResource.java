@@ -2,9 +2,7 @@ package br.com.osvaldsoza.model.resource;
 
 
 import br.com.osvaldsoza.TvSerie;
-import br.com.osvaldsoza.proxy.TvSeriesProxy;
-import br.com.osvaldsoza.service.TvSeriesService;
-import org.eclipse.microprofile.rest.client.inject.RestClient;
+import br.com.osvaldsoza.service.TvMazeService;
 
 import javax.inject.Inject;
 import javax.ws.rs.GET;
@@ -20,14 +18,14 @@ import java.util.List;
 public class TvSeriesResource {
 
     @Inject
-    private TvSeriesService tvSeriesService;
+    private TvMazeService tvMazeService;
 
     private List<TvSerie> tvSeries = new ArrayList<>();
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public Response get(@QueryParam("title") String title) {
-        TvSerie tvSerie = tvSeriesService.singleSearchShowsByTitle(title);
+        TvSerie tvSerie = tvMazeService.singleSearchShowsByTitle(title);
         tvSeries.add(tvSerie);
         return Response.ok(tvSeries).build();
     }
