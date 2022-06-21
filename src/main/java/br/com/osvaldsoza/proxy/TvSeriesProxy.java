@@ -1,5 +1,6 @@
-package br.com.osvaldsoza;
+package br.com.osvaldsoza.proxy;
 
+import br.com.osvaldsoza.TvSerie;
 import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
 
 import javax.ws.rs.GET;
