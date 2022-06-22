@@ -1,6 +1,6 @@
 package br.com.osvaldsoza.tvmaze.proxy;
 
-import br.com.osvaldsoza.TvSerie;
+import br.com.osvaldsoza.tvmaze.model.TvSerie;
 import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
 
 import javax.ws.rs.GET;
@@ -12,13 +12,9 @@ import javax.ws.rs.core.MediaType;
 @Path("/singlesearch/")
 @Produces(MediaType.APPLICATION_JSON)
 @RegisterRestClient
-public interface SingleSearchShowsProxy {
+public interface TvSerieProxy {
 
     @GET
     @Path("/shows")
-    TvSerie singlesearchShows(@QueryParam("q") String title);
-
-//    @GET
-//    @Path("/shows/{id}/episodes")
-//    List<String> showsEpisodesById(Long id);
+    TvSerie get(@QueryParam("q") String title);
 }

@@ -1,4 +1,4 @@
-package br.com.osvaldsoza;
+package br.com.osvaldsoza.tvmaze.model;
 
 import java.net.URL;
 import java.util.Set;
